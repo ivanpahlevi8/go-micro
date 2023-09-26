@@ -137,7 +137,7 @@ func (user *User) GetUserByEmail(email string) (*User, error) {
 	var getUpdatedAt time.Time
 
 	// create query
-	queryTxt := `select id, email, first_name, last_name, password, access_level, created_at, updated_at from public.users where email = $1`
+	queryTxt := `select id, email, first_name, last_name, password, user_active, created_at, updated_at from public.users where email = $1`
 
 	// run query
 	query := dbObj.QueryRowContext(
